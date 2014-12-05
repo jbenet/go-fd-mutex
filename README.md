@@ -14,7 +14,7 @@ func runtime_Semacquire(sema *uint32)
 func runtime_Semrelease(sema *uint32)
 ```
 
-These are functions without a body. But it turns out that they get special-cased. They are satisfied by the semaphore implementation in http://golang.org/src/pkg/runtime/sema.goc. Go patches it weirdly. This is C code, with an odd character as a var name delimiter `·`, to mimic the `.` pkg notation (good idea).
+These are functions without a body. But it turns out that they get special-cased. They are satisfied by the semaphore implementation in http://golang.org/src/pkg/runtime/sema.goc. Go patches it weirdly. This is C code, with a middle-dot `·` character as a var name delimiter, to mimic the `.` pkg notation (good idea).
 
 ```Go
 // TODO(dvyukov): move to netpoll.goc once it's used by all OSes.
