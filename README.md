@@ -4,7 +4,7 @@ This fd-mutex is code extracted from the go/net package:
 - http://golang.org/src/pkg/net/fd_mutex.go
 - http://golang.org/src/pkg/net/fd_mutex_test.go
 
-It's great, and designed specifically for low-level IO in Go. It's used by `netFD` (http://golang.org/src/pkg/net/fd_unix.go), the thing all `net.Conn` implementations use underneath, to manage thier sockets.
+It's great, and designed specifically for low-level IO in Go. It's used by `netFD` (http://golang.org/src/pkg/net/fd_unix.go), the thing all `net.Conn` implementations use underneath, to manage their sockets.
 
 I want to use it in [go-udtwrapper](https://github.com/jbenet/go-udtwrapper/udt), and other net protocol implementations. But, sadly, I can't use it because it relies on these odd lines:
 
@@ -50,6 +50,6 @@ if(streq(dir, "pkg/runtime")) {
 }
 ```
 
-After finding all this out, trudging through the source, I gave up. If the go team is trying so hard to keep all this private and unused by others, it's alikely that it makes lots of assumption I'd break by ripping it out and putting it elsewhere.
+After finding all this out, trudging through the source, I gave up. If the go team is trying so hard to keep all this private and unused by others, it's likely that it makes lots of assumption I'd break by ripping it out and putting it elsewhere.
 
-This repo up here for posterity, and just in case I change my mind again.
+This repo is up here for posterity, and just in case I change my mind again.
